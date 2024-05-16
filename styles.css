@@ -1,59 +1,97 @@
+/* styles.css */
 body {
-  margin: 0;
-  overflow: hidden;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #f0e5cf;
   cursor: none; /* Hide the default cursor */
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scrollbars */
 }
 
-#bubble-tea {
+#stickman {
   position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 20px;
+  height: 50px;
+  transform-origin: center bottom;
 }
 
-#cup {
-  position: relative;
-  width: 150px;
-  height: 200px;
-  background: #fff;
-  border: 5px solid #000;
-
-  border-radius: 20px 20px 30px 30px;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#fluid {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60%;
-  background: #d4a373;
-  border-radius: 0 0 15px 15px;
-}
-
-#pipette {
-  position: absolute;
-  width: 15px;
-  height: 200px;
-  background: #ccc;
-  top: -50px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-.bubble {
-  position: absolute;
+.head {
   width: 10px;
   height: 10px;
-  background: #333;
+  background-color: black;
   border-radius: 50%;
-  transition: transform 0.1s;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.body {
+  width: 4px;
+  height: 20px;
+  background-color: black;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.arm {
+  width: 2px;
+  height: 15px;
+  background-color: black;
+  position: absolute;
+  top: 10px;
+}
+
+.arm.left {
+  left: calc(50% - 5px);
+  transform-origin: top right;
+  animation: leftArm 1s infinite alternate;
+}
+
+.arm.right {
+  left: calc(50% + 3px);
+  transform-origin: top left;
+  animation: rightArm 1s infinite alternate;
+}
+
+.leg {
+  width: 2px;
+  height: 20px;
+  background-color: black;
+  position: absolute;
+  top: 30px;
+}
+
+.leg.left {
+  left: calc(50% - 5px);
+  transform-origin: top right;
+  animation: leftLeg 1s infinite alternate;
+}
+
+.leg.right {
+  left: calc(50% + 3px);
+  transform-origin: top left;
+  animation: rightLeg 1s infinite alternate;
+}
+
+@keyframes leftArm {
+  0% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+
+@keyframes rightArm {
+  0% { transform: rotate(10deg); }
+  100% { transform: rotate(0deg); }
+}
+
+
+@keyframes leftLeg {
+  0% { transform: rotate(20deg); }
+  100% { transform: rotate(-20deg); }
+}
+
+@keyframes rightLeg {
+  0% { transform: rotate(-20deg); }
+  100% { transform: rotate(20deg); }
 }
