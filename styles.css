@@ -1,97 +1,128 @@
-/* styles.css */
 body {
-  cursor: none; /* Hide the default cursor */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
-  padding: 0;
-  overflow: hidden; /* Prevent scrollbars */
+  background-color: #87CEEB;
+  cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxNiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjY0NyAyMC4yMThMMTUuMzkgOC4zNjIuNjEzIDIwLjIyaDEwLjAzNGwtMy45My02LjIyaC01LjUyN3YtNS43OWgtNS41MjZsLTMuOTMyIDYuMjNIN2wuMTIxLTEuNzM1aC0xTDYuODkgMGwtMS4xMyAxLjczNEgxVjYuNjI5SDEuNzUzTDIuMzgxIDEySDFsMS4xMyAxLjczNEgxdi02LjIzTDIuMTQgMTIuMjA0aDEuMzc3bC42MTQtNS43ODZoMS43ODFsLjYxMSA1Ljc4NmgtNS4yOTZsLTMuOTMxIDYuMjNIMTguMzgxem0tMS4yMzctMTguNDg1aC01LjkzMmwtMS4xMzUtMS43MzNIMTIuODFsMS4xMzMgMS43MzNoLjAwN3oiIGZpbGw9IiNGRjZFMDAiLz4KPC9zdmc+Cg=='), auto; /* CSS ile çizilen havuç imleci */
 }
 
-#stickman {
-  position: absolute;
-  width: 20px;
-  height: 50px;
-  transform-origin: center bottom;
+.score-board {
+  font-size: 24px;
+  margin-bottom: 20px;
 }
 
-.head {
-  width: 10px;
-  height: 10px;
-  background-color: black;
+.game-over {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rabbit-holes {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+}
+
+.rabbit-hole {
+  width: 150px;
+  height: 100px;
+  background-color: #654321;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.rabbit {
+  width: 100px;
+  height: 100px;
+  background-color: #fff;
   border-radius: 50%;
   position: absolute;
-  top: 0;
+  bottom: -100px;
   left: 50%;
   transform: translateX(-50%);
+  transition: bottom 0.5s;
 }
 
-.body {
-  width: 4px;
-  height: 20px;
-  background-color: black;
+.ear {
+  width: 20px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50% 50% 0 0;
   position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: -20px;
 }
 
-.arm {
-  width: 2px;
-  height: 15px;
-  background-color: black;
-  position: absolute;
-  top: 10px;
+.left-ear {
+  left: 10px;
+  transform: rotate(-20deg);
 }
 
-.arm.left {
-  left: calc(50% - 5px);
-  transform-origin: top right;
-  animation: leftArm 1s infinite alternate;
+.right-ear {
+  right: 10px;
+  transform: rotate(20deg);
 }
 
-.arm.right {
-  left: calc(50% + 3px);
-  transform-origin: top left;
-  animation: rightArm 1s infinite alternate;
+.face {
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
-.leg {
-  width: 2px;
-  height: 20px;
-  background-color: black;
+.eye {
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  border-radius: 50%;
   position: absolute;
   top: 30px;
 }
 
-.leg.left {
-  left: calc(50% - 5px);
-  transform-origin: top right;
-  animation: leftLeg 1s infinite alternate;
+.left-eye {
+  left: 25px;
 }
 
-.leg.right {
-  left: calc(50% + 3px);
-  transform-origin: top left;
-  animation: rightLeg 1s infinite alternate;
+.right-eye {
+  right: 25px;
 }
 
-@keyframes leftArm {
-  0% { transform: rotate(10deg); }
-  100% { transform: rotate(0deg); }
+.nose {
+  width: 10px;
+  height: 10px;
+  background-color: pink;
+  border-radius: 50%;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-
-@keyframes rightArm {
-  0% { transform: rotate(10deg); }
-  100% { transform: rotate(0deg); }
+.mouth {
+  width: 20px;
+  height: 10px;
+  border-bottom: 2px solid #000;
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-
-@keyframes leftLeg {
-  0% { transform: rotate(20deg); }
-  100% { transform: rotate(-20deg); }
+.whiskers {
+  width: 40px;
+  height: 2px;
+  background-color: #000;
+  position: absolute;
+  top: 55px;
 }
 
-@keyframes rightLeg {
-  0% { transform: rotate(-20deg); }
-  100% { transform: rotate(20deg); }
+.left-whiskers {
+  left: -40px;
+}
+
+.right-whiskers {
+  right: -40px;
 }

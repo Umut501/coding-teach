@@ -1,26 +1,34 @@
-// script.js
-document.addEventListener('DOMContentLoaded', () => {
-    const stickman = document.getElementById('stickman');
+let score = 0;
+const scoreDisplay = document.getElementById('score');
+const gameOverDisplay = document.getElementById('game-over');
+const holes = document.querySelectorAll('.rabbit-hole');
+const rabbits = document.querySelectorAll('.rabbit');
 
-    document.addEventListener('mousemove', (event) => {
-        stickman.style.left = `${event.pageX}px`;
-        stickman.style.top = `${event.pageY}px`;
-        stickman.style.display = 'block';
+function randomRabbit() {
+    holes.forEach(hole => {
+        hole.querySelector('.rabbit').style.bottom = '-100px';
     });
+    const randomIndex = Math.floor(Math.random() * holes.length);
+    holes[randomIndex].querySelector('.rabbit').style.bottom = '0';
+}
 
-    let isWalking = false;
-    let walkTimeout;
-
-    document.addEventListener('mousemove', () => {
-        if (!isWalking) {
-            stickman.style.animationPlayState = 'running';
-            isWalking = true;
+holes.forEach(hole => {
+    hole.addEventListener('click', () => {
+        const rabbit = hole.querySelector('.rabbit');
+        if (rabbit.style.bottom === '0px') {
+            score++;
+            scoreDisplay.textContent = score;
+            rabbit.style.bottom = '-100px';
+            if (score >= 20) {
+                gameOver();
+            }
         }
-        
-        clearTimeout(walkTimeout);
-        walkTimeout = setTimeout(() => {
-            stickman.style.animationPlayState = 'paused';
-            isWalking = false;
-        }, 100); // Adjust the delay as needed
     });
 });
+
+function gameOver() {
+    clearInterval(rabbitInterval);
+    gameOverDisplay.style.display = 'flex';
+}
+
+const rabbitInterval = setInterval(randomRabbit, 1000);
