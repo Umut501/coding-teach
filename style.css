@@ -1,20 +1,29 @@
-body {
-    background: #90ADF9;
-  }
-  
-  .arealight {
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    user-select: none;
-    background-image: conic-gradient(from 90deg at 70% 50%, white, #2753F5), 
-                      conic-gradient(from 270deg at 30% 50%, #2753F5, white);
-    -webkit-mask-image: radial-gradient(100% 50% at center center, black, transparent);
-    background-position-x: 0%, 100%;
-    background-position-y: 0%, 0%;
-    background-size: 50% 100%, 50% 100%;
-    transform: rotate(180deg) translate3d(0, 0, 0);
-    transform-origin: center center;
-    background-repeat: no-repeat;
-  }
-  
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    cursor: none; /* Hide the default cursor */
+}
+
+.head {
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    background-color: #f5c7a9;
+    border-radius: 50% 50% 45% 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.face {
+    width: 120px;
+    height: 160px;
+    background-color: #f5c7a9;
+    border-radius: 50% 50% 45% 45%;
+    border: 5px solid #000;
+}
