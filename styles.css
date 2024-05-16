@@ -1,128 +1,144 @@
-body {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  background-color: #87CEEB;
-  cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxNiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEwLjY0NyAyMC4yMThMMTUuMzkgOC4zNjIuNjEzIDIwLjIyaDEwLjAzNGwtMy45My02LjIyaC01LjUyN3YtNS43OWgtNS41MjZsLTMuOTMyIDYuMjNIN2wuMTIxLTEuNzM1aC0xTDYuODkgMGwtMS4xMyAxLjczNEgxVjYuNjI5SDEuNzUzTDIuMzgxIDEySDFsMS4xMyAxLjczNEgxdi02LjIzTDIuMTQgMTIuMjA0aDEuMzc3bC42MTQtNS43ODZoMS43ODFsLjYxMSA1Ljc4NmgtNS4yOTZsLTMuOTMxIDYuMjNIMTguMzgxem0tMS4yMzctMTguNDg1aC01LjkzMmwtMS4xMzUtMS43MzNIMTIuODFsMS4xMzMgMS43MzNoLjAwN3oiIGZpbGw9IiNGRjZFMDAiLz4KPC9zdmc+Cg=='), auto; /* CSS ile çizilen havuç imleci */
+@font-face {
+  font-family: 'KCNeueTeeth';
+  src: url('KCPowerSlam-Wavy.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-.score-board {
-  font-size: 24px;
+body {
+  font-family: 'KCNeueTeeth', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #000;
+  color: #fff;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  border-bottom: 2px solid #fff;
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: right;
   margin-bottom: 20px;
 }
 
-.game-over {
-  display: none;
-  flex-direction: column;
-  align-items: center;
+header nav ul li {
+  display: inline;
+  margin: 0 15px;
 }
 
-.rabbit-holes {
+header nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.intro {
+  margin-top: 50px;
+}
+
+.intro h1 {
+  font-size: 10em;
+  margin: 0;
+}
+
+.intro p {
+  font-size: 5em;
+  margin: 10px 0;
+}
+
+main {
+  padding: 20px;
+}
+
+main h2 {
+  font-size: 4em;
+  margin-bottom: 20px;
+}
+
+main p, main ul {
+  font-size: 2em;
+}
+
+.work-item {
+  border: 2px solid #fff;
+  padding: 20px;
+  margin-bottom: 10px;
   display: flex;
-  justify-content: space-around;
-  width: 80%;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2em;
 }
 
-.rabbit-hole {
-  width: 150px;
-  height: 100px;
-  background-color: #654321;
-  border-radius: 50%;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
+footer {
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid #fff;
+  font-size: 3em;
 }
 
-.rabbit {
-  width: 100px;
-  height: 100px;
-  background-color: #fff;
-  border-radius: 50%;
-  position: absolute;
-  bottom: -100px;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: bottom 0.5s;
+/* Responsive Design */
+@media (max-width: 768px) {
+  header nav ul {
+      text-align: center;
+  }
+
+  header nav ul li {
+      display: block;
+      margin: 10px 0;
+  }
+
+  .intro h1 {
+      font-size: 8em;
+  }
+
+  .intro p {
+      font-size: 4em;
+  }
+
+  main h2 {
+      font-size: 3em;
+  }
+
+  main p, main ul {
+      font-size: 1.5em;
+  }
+
+  .work-item {
+      flex-direction: column;
+      align-items: flex-start;
+  }
 }
 
-.ear {
-  width: 20px;
-  height: 40px;
-  background-color: #fff;
-  border-radius: 50% 50% 0 0;
-  position: absolute;
-  top: -20px;
-}
+@media (max-width: 480px) {
+  .intro h1 {
+      font-size: 6em;
+  }
 
-.left-ear {
-  left: 10px;
-  transform: rotate(-20deg);
-}
+  .intro p {
+      font-size: 3em;
+  }
 
-.right-ear {
-  right: 10px;
-  transform: rotate(20deg);
-}
+  main h2 {
+      font-size: 2.5em;
+  }
 
-.face {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
+  main p, main ul {
+      font-size: 1.2em;
+  }
 
-.eye {
-  width: 10px;
-  height: 10px;
-  background-color: #000;
-  border-radius: 50%;
-  position: absolute;
-  top: 30px;
-}
+  .work-item {
+      padding: 10px;
+      font-size: 1.2em;
+  }
 
-.left-eye {
-  left: 25px;
-}
-
-.right-eye {
-  right: 25px;
-}
-
-.nose {
-  width: 10px;
-  height: 10px;
-  background-color: pink;
-  border-radius: 50%;
-  position: absolute;
-  top: 50px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.mouth {
-  width: 20px;
-  height: 10px;
-  border-bottom: 2px solid #000;
-  position: absolute;
-  top: 60px;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.whiskers {
-  width: 40px;
-  height: 2px;
-  background-color: #000;
-  position: absolute;
-  top: 55px;
-}
-
-.left-whiskers {
-  left: -40px;
-}
-
-.right-whiskers {
-  right: -40px;
+  footer {
+      font-size: 2em;
+  }
 }

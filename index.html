@@ -3,89 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tavşan Oyunu</title>
+    <title>Umut Baybece - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="score-board">
-        <span>Skor: </span><span id="score">0</span>
-    </div>
-    <div class="game-over" id="game-over">
-        <p>Game Over!</p>
-        <button onclick="location.reload()">Play Again</button>
-    </div>
-    <div class="rabbit-holes">
-        <div class="rabbit-hole" id="hole-1">
-            <div class="rabbit">
-                <div class="ear left-ear"></div>
-                <div class="ear right-ear"></div>
-                <div class="face">
-                    <div class="eye left-eye"></div>
-                    <div class="eye right-eye"></div>
-                    <div class="nose"></div>
-                    <div class="mouth"></div>
-                    <div class="whiskers left-whiskers"></div>
-                    <div class="whiskers right-whiskers"></div>
-                </div>
-            </div>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#work">Work</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="intro">
+            <h1>Umut Baybece</h1>
+            <p>WEB DEVELOPER</p>
+            <p>WEB DESIGNER</p>
         </div>
-        <div class="rabbit-hole" id="hole-2">
-            <div class="rabbit">
-                <div class="ear left-ear"></div>
-                <div class="ear right-ear"></div>
-                <div class="face">
-                    <div class="eye left-eye"></div>
-                    <div class="eye right-eye"></div>
-                    <div class="nose"></div>
-                    <div class="mouth"></div>
-                    <div class="whiskers left-whiskers"></div>
-                    <div class="whiskers right-whiskers"></div>
-                </div>
+    </header>
+    <main>
+        <section id="about">
+            <h2>About</h2>
+            <p>I'm Umut Baybece, a 24-year-old software developer based in Antalya, Turkey. I graduated from Middle East Technical University NCC with a degree in Computer Engineering. I currently work at Sednacloud and have experience with Angular, ASP.NET Core, PostgreSQL, Tailwind CSS, DevExtreme, and the .NET Framework. I am also certified in Data Science and AI from Harvard and IBM. I am fluent in English and have interests in digital art and design.</p>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Angular</li>
+                <li>ASP.NET Core</li>
+                <li>PostgreSQL</li>
+                <li>Tailwind CSS</li>
+                <li>DevExtreme</li>
+                <li>.NET Framework</li>
+            </ul>
+        </section>
+        <section id="work">
+            <h2>Work</h2>
+            <div class="work-item">
+                <p>İğma.im</p>
+                <span>UI/UX, Development</span>
             </div>
-        </div>
-        <div class="rabbit-hole" id="hole-3">
-            <div class="rabbit">
-                <div class="ear left-ear"></div>
-                <div class="ear right-ear"></div>
-                <div class="face">
-                    <div class="eye left-eye"></div>
-                    <div class="eye right-eye"></div>
-                    <div class="nose"></div>
-                    <div class="mouth"></div>
-                    <div class="whiskers left-whiskers"></div>
-                    <div class="whiskers right-whiskers"></div>
-                </div>
+            <div class="work-item">
+                <p>Kryptex Pool</p>
+                <span>UI/UX, Development</span>
             </div>
-        </div>
-        <div class="rabbit-hole" id="hole-4">
-            <div class="rabbit">
-                <div class="ear left-ear"></div>
-                <div class="ear right-ear"></div>
-                <div class="face">
-                    <div class="eye left-eye"></div>
-                    <div class="eye right-eye"></div>
-                    <div class="nose"></div>
-                    <div class="mouth"></div>
-                    <div class="whiskers left-whiskers"></div>
-                    <div class="whiskers right-whiskers"></div>
-                </div>
-            </div>
-        </div>
-        <div class="rabbit-hole" id="hole-5">
-            <div class="rabbit">
-                <div class="ear left-ear"></div>
-                <div class="ear right-ear"></div>
-                <div class="face">
-                    <div class="eye left-eye"></div>
-                    <div class="eye right-eye"></div>
-                    <div class="nose"></div>
-                    <div class="mouth"></div>
-                    <div class="whiskers left-whiskers"></div>
-                    <div class="whiskers right-whiskers"></div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="script.js"></script>
+            <!-- Add more work items as needed -->
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>Email: umut@example.com</p>
+        </section>
+    </main>
+    <footer>
+        <p>Portfolio 2024</p>
+    </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>
