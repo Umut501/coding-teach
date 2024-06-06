@@ -1,5 +1,10 @@
 
-
+@font-face {
+    font-family: 'Dagsen';
+    src: url('fonts/Dagsen_Inked.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 body,
 html {
@@ -7,7 +12,8 @@ html {
     padding: 0;
     overflow-x: hidden;
     scroll-behavior: smooth;
-    font-family: Arial, sans-serif;
+    font-family: 'Dagsen', sans-serif;
+    background-color: #000;
 }
 
 .full-page {
@@ -16,15 +22,52 @@ html {
     position: relative;
 }
 
+.right-centered-text {
+    position: absolute;
+    top: 40%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    text-align: right;
+    font-size: 50px;
+    font-weight: bold;
+    color: #f7d794;
+    z-index: 102;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.centered-text span {
+    display: inline-block;
+    background: linear-gradient(45deg, #6DAEC4, #f7d794, #755E44, #30160D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    transition: background-position 0.1s;
+}
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+@media ( max-width: 768px) {
+    .right-centered-text {
+        font-size: 8vw;
+        left: 50%;
+    }
+}
+
 .centered-text {
     position: absolute;
-    top: 30%;
-    left: 70%;
+    top:8%;
+    left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     font-size: 5vw;
     font-weight: bold;
-    color: white;
+    color: #f7d794;
     z-index: 100;
     white-space: nowrap;
     overflow: hidden;
@@ -33,11 +76,9 @@ html {
 
 @media ( max-width: 768px) {
     .centered-text {
-        font-size: 8vw;
-        left: 50%;
+        font-size: 10vw;
     }
 }
-
 
 spline-viewer {
     width: 100%;
@@ -46,72 +87,35 @@ spline-viewer {
     top: 0;
     left: 0;
 }
-.hide-logo {
-    position: absolute;
-    bottom: 20px;
-    right: 28px;
-    width: 100px;
-    height: 100px;
-    z-index: 100;
-    border-radius: 80px;
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 80px;
-    font-weight: bold;
-    transition: all 0.5s;
-}
 
 .hide-logo-bg {
+    border-radius: 80px;
     position: absolute;
     bottom: 0;
     right: 0;
     width: 160px;
     height: 100px;
     z-index: 100;
-    border-radius: 20px;
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
-    color: white;
+    color: #f7d794;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 80px;
+    font-size: 60px;
     font-weight: bold;
 }
 
-.hide-logo:hover {
-    transition: all 0.5s;
-    transform: rotate(90deg);
+.hide-logo-bg span {
+transform: rotate(90deg);
+/* on hover jump */
+transition: transform 0.2s;
+/*not selectable but clickable */
+user-select: none;
+
+
 }
 
-.hide-logo span {
-    transition: all 0.5s;
-    display: inline-block;
-}
-
-.hide-logo:hover span {
-    transform: rotate(90deg);
-    transition: all 0.5s;
-}
-
-@media ( max-width: 768px) {
-    .centered-text {
-        font-size: 10vw;
-    }
-    .hide-logo {
-        bottom: 10px;
-        right: 10px;
-        width: 50px;
-        height: 50px;
-        font-size: 40px;
-    }
-    .hide-logo-bg {
-        width: 200px;
-        height:60px;
-        font-size: 40px;
-    }
+.hide-logo-bg:hover span {
+    transform: rotate(135deg);
 }

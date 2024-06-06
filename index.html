@@ -9,14 +9,15 @@
 </head>
 <body>
     <div class="full-page" id="landing">
-        <h1 class="centered-text">Hello, I'm Umut <br>a developer who loves<br> crafting sleek, <br>functional websites.</h1>
-        <div class="hide-logo-bg"></div>
-        <div class="hide-logo" onclick="scrollToAbout()">→</div>
+        <h1 class="right-centered-text">HELLO, I AM UMUT a software developer who loves crafting sleek & functional websites.
+        </h1>
+        <div class="hide-logo-bg"><span>➺</span></div>
+
         <script type="module" src="https://unpkg.com/@splinetool/viewer@1.5.0/build/spline-viewer.js"></script>
         <spline-viewer url="https://prod.spline.design/vaO1W0JBrI3fuHAn/scene.splinecode"></spline-viewer>
     </div>
     <div class="full-page" id="about">
-        <h1 class="centered-text">About Me</h1>
+        <h1 class="centered-text"><span>About Me</span></h1>
     </div>
     <div class="full-page" id="projects">
         <h1 class="centered-text">Projects</h1>
@@ -24,5 +25,62 @@
     <div class="full-page" id="contact">
         <h1 class="centered-text">Contact</h1>
     </div>
+    <script>
+        document.addEventListener('mousemove', function(e) {
+            let x = (e.clientX / window.innerWidth) * 100;
+            let y = (e.clientY / window.innerHeight) * 100;
+            document.querySelectorAll('.centered-text span').forEach(span => {
+                span.style.backgroundPosition = `${x}% ${y}%`;
+            });
+        });
+    </script>
+
+<style>
+    .text {
+    user-select: none;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .text > div {
+    display: inline-block;
+    position: relative;
+    font-size: 80px;
+    color: transparent;
+    transform-origin: center center;
+    transform-style: preserve-3d;
+    animation: float 4s infinite;
+  }
+  
+  .text > div:nth-child(1) { animation-delay: -1.5s; }
+  .text > div:nth-child(2) { animation-delay: -1s; }
+  .text > div:nth-child(3) { animation-delay: -0.5s; }
+  .text > div:nth-child(4) { animation-delay: 0s; }
+  .text > div:nth-child(5) { animation-delay: 0.5s; }
+  .text > div:nth-child(6) { animation-delay: 1s; }
+  .text > div:nth-child(7) { animation-delay: 1.5s; }
+  .text > div:nth-child(8) { animation-delay: 2s; }
+  
+  .text > div > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #f7d794;
+    text-shadow: 0 0 1px white;
+  }
+  
+  .text > div > div:nth-child(n+3):nth-last-child(n+3) {
+    color: #edd155;
+  }
+  
+  .text > div > div {
+    transform: translateZ(calc(var(--i) * 0.96vmin));
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: rotate3d(0, 1, 0, 30deg); }
+    50% { transform: rotate3d(0, -1, 0, 30deg); }
+  }
+</style>
 </body>
 </html>
