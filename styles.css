@@ -1,8 +1,13 @@
+
+
+
 body,
 html {
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    font-family: Arial, sans-serif;
 }
 
 .full-page {
@@ -11,25 +16,52 @@ html {
     position: relative;
 }
 
+.centered-text {
+    position: absolute;
+    top: 30%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 5vw;
+    font-weight: bold;
+    color: white;
+    z-index: 100;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media ( max-width: 768px) {
+    .centered-text {
+        font-size: 8vw;
+        left: 50%;
+    }
+}
+
+
+spline-viewer {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
 .hide-logo {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 160px;
-    height: 160px;
-    /* Adjust height as necessary */
+    bottom: 20px;
+    right: 28px;
+    width: 100px;
+    height: 100px;
     z-index: 100;
     border-radius: 80px;
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     color: white;
-    /* text shoull fill the entire div */
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 80px;
     font-weight: bold;
-    /* Adjust opacity as necessary */
     transition: all 0.5s;
 }
 
@@ -39,13 +71,11 @@ html {
     right: 0;
     width: 160px;
     height: 100px;
-    /* Adjust height as necessary */
     z-index: 100;
     border-radius: 20px;
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     color: white;
-    /* text shoull fill the entire div */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,15 +83,7 @@ html {
     font-weight: bold;
 }
 
-.hide-logo:hover span {
-    transform: rotate(-90deg);
-}
-
-
-/* text inside will rotate 90 degrees on hover and rotate back on mouseout but as text rotates the div vwill stay at same position but its height will increase */
 .hide-logo:hover {
-    height: 160px;
-    /* Adjust height as necessary */
     transition: all 0.5s;
     transform: rotate(90deg);
 }
@@ -69,7 +91,6 @@ html {
 .hide-logo span {
     transition: all 0.5s;
     display: inline-block;
-    transition: all 0.5s;
 }
 
 .hide-logo:hover span {
@@ -77,43 +98,20 @@ html {
     transition: all 0.5s;
 }
 
-
-.leftcornertext{
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 160px;
-    height: 160px;
-    /* Adjust height as necessary */
-    z-index: 100;
-    border-radius: 90px;
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    color: white;
-    /* text shoull fill the entire div */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 80px;
-    font-weight: bold;
-    /* Adjust opacity as necessary */
-    transition: all 0.5s;
-}
-.leftcornertext-bg {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 160px;
-    height: 100px;
-    /* Adjust height as necessary */
-    z-index: 100;
-    border-radius: 20px;
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    color: white;
-    /* text shoull fill the entire div */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 80px;
+@media ( max-width: 768px) {
+    .centered-text {
+        font-size: 10vw;
+    }
+    .hide-logo {
+        bottom: 10px;
+        right: 10px;
+        width: 50px;
+        height: 50px;
+        font-size: 40px;
+    }
+    .hide-logo-bg {
+        width: 200px;
+        height:60px;
+        font-size: 40px;
+    }
 }

@@ -5,27 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Umut's Landing Page</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="full-page">
-        <div class="hide-logo-bg">
-            
-        </div>
-        <div class="leftcornertext-bg">
-            
-        </div>
-
-        <div class="hide-logo">
-            →
-        </div>
-        <div class="leftcornertext">
-            ≡
-        </div>
-
-
+    <div class="full-page" id="landing">
+        <h1 class="centered-text">Hello, I'm Umut <br>a developer who loves<br> crafting sleek, <br>functional websites.</h1>
+        <div class="hide-logo-bg"></div>
+        <div class="hide-logo" onclick="scrollToAbout()">→</div>
         <script type="module" src="https://unpkg.com/@splinetool/viewer@1.5.0/build/spline-viewer.js"></script>
         <spline-viewer url="https://prod.spline.design/vaO1W0JBrI3fuHAn/scene.splinecode"></spline-viewer>
     </div>
-
+    <div class="full-page" id="about">
+        <h1 class="centered-text">About Me</h1>
+    </div>
+    <div class="full-page" id="projects">
+        <h1 class="centered-text">Projects</h1>
+    </div>
+    <div class="full-page" id="contact">
+        <h1 class="centered-text">Contact</h1>
+    </div>
 </body>
 </html>
