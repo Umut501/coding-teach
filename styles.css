@@ -27,14 +27,18 @@ html {
     top: 40%;
     left: 70%;
     transform: translate(-50%, -50%);
-    text-align: right;
-    font-size: 50px;
-    font-weight: bold;
+    text-align: left;
+    font-size: 80px;
     color: #f7d794;
     z-index: 102;
     white-space: wrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.right-centered-text-small {
+    color: rgba(255, 255, 255, 0.726);
+    font-size: 26px;
 }
 
 .centered-text span {
@@ -112,10 +116,64 @@ transform: rotate(90deg);
 transition: transform 0.2s;
 /*not selectable but clickable */
 user-select: none;
+}
+.hide-logo-bg:hover span {
+    transform: rotate(135deg);
+}
 
+.navDiv {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 60px; /* Smaller initial width to fit the hamburger icon */
+    height: 60px; /* Smaller initial height to fit the hamburger icon */
+    z-index: 100;
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    color: #f7d794;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: bold;
+    overflow: hidden;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out; /* Smooth transition */
+    cursor: pointer;
+    border-radius: 20px;
 
 }
 
-.hide-logo-bg:hover span {
-    transform: rotate(135deg);
+.navDiv:hover {
+    width: 200px; /* Expand width on hover */
+    height: auto; /* Expand height to fit content */
+}
+
+.navItem {
+    display: none; /* Hide items initially */
+    padding: 10px 0;
+    width: 100%; /* Ensure items take full width */
+    text-align: center; /* Center text horizontally */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for scaling */
+}
+
+.navDiv:hover .navItem {
+    display: block; /* Show items on hover */
+}
+
+.navItem:hover {
+    transform: scale(1.2); /* Scale up on hover */
+}
+
+/* Style for the hamburger icon */
+.hamburger {
+    width: 30px;
+    height: 3px;
+    background-color: #f7d794;
+    margin: 5px 0;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navDiv:hover .hamburger {
+    transform: scaleY(0); /* Hide hamburger icon on hover */
 }
