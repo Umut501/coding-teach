@@ -49,6 +49,7 @@ html {
     background-size: 200% 200%;
     transition: background-position 0.1s;
 }
+
 @keyframes gradient-animation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -65,7 +66,7 @@ html {
 
 .centered-text {
     position: absolute;
-    top:8%;
+    top: 0%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -111,11 +112,9 @@ spline-viewer {
 }
 
 .hide-logo-bg span {
-transform: rotate(90deg);
-/* on hover jump */
-transition: transform 0.2s;
-/*not selectable but clickable */
-user-select: none;
+    transform: rotate(90deg);
+    transition: transform 0.2s;
+    user-select: none;
 }
 .hide-logo-bg:hover span {
     transform: rotate(135deg);
@@ -125,8 +124,8 @@ user-select: none;
     position: fixed;
     top: 0;
     right: 0;
-    width: 60px; /* Smaller initial width to fit the hamburger icon */
-    height: 60px; /* Smaller initial height to fit the hamburger icon */
+    width: 60px;
+    height: 60px;
     z-index: 100;
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
@@ -138,34 +137,32 @@ user-select: none;
     font-size: 20px;
     font-weight: bold;
     overflow: hidden;
-    transition: width 0.3s ease-in-out, height 0.3s ease-in-out; /* Smooth transition */
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
     cursor: pointer;
     border-radius: 20px;
-
 }
 
 .navDiv:hover {
-    width: 200px; /* Expand width on hover */
-    height: auto; /* Expand height to fit content */
+    width: 200px;
+    height: auto;
 }
 
 .navItem {
-    display: none; /* Hide items initially */
+    display: none;
     padding: 10px 0;
-    width: 100%; /* Ensure items take full width */
-    text-align: center; /* Center text horizontally */
-    transition: transform 0.3s ease-in-out; /* Smooth transition for scaling */
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
 }
 
 .navDiv:hover .navItem {
-    display: block; /* Show items on hover */
+    display: block;
 }
 
 .navItem:hover {
-    transform: scale(1.2); /* Scale up on hover */
+    transform: scale(1.2);
 }
 
-/* Style for the hamburger icon */
 .hamburger {
     width: 30px;
     height: 3px;
@@ -175,5 +172,44 @@ user-select: none;
 }
 
 .navDiv:hover .hamburger {
-    transform: scaleY(0); /* Hide hamburger icon on hover */
+    transform: scaleY(0);
+}
+
+/* Scrolling Text Styles */
+.container {
+    width: 100vw;
+    overflow: hidden;
+}
+
+.scrolling-text {
+    top: 80%;
+    position: absolute;
+    display: inline-block;
+    transition: transform 0.5s cubic-bezier(0.23, 0.36, 0.28, 0.83);
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.scrolling-text span {
+    display: inline-block;
+    background: linear-gradient(45deg, #6DAEC4, #f7d794, #755E44, #30160D);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 200%;
+    transition: background-position 0.1s;
+}
+
+.scrolling-text .scrolling-text-content {
+    color: #f7d794;
+    font-size: 4vw;
+    white-space: nowrap;
+    transition: transform 0.5s cubic-bezier(0.23, 0.36, 0.28, 0.83);
+    line-height: 1em;
+    margin: 50px 0;
+}
+
+@media (max-width: 768px) {
+    .scrolling-text .scrolling-text-content {
+        font-size: 8vw;
+    }
 }
