@@ -191,7 +191,7 @@ spline-viewer {
 /* Fixed positioning for scrolling text container */
 .scrolling-container {
     position: fixed; /* Use fixed to keep it in view */
-    top: 50%; /* Align vertically in the middle of the screen */
+    top: 40%; /* Align vertically in the middle of the screen */
     left: 0;
     width: 100%;
     transform: translateY(-50%); /* Center it vertically */
@@ -202,7 +202,7 @@ spline-viewer {
 /* Responsive font size and path adjustment */
 .path-text {
     fill: #fff;
-    font-size: 1.5vw; /* Adjust font size based on viewport width */
+    font-size:  2vw; /* Adjust font size based on viewport width */
     font-weight: bold;
     white-space: nowrap; /* Ensures text stays in one line */
 }
@@ -217,12 +217,11 @@ svg {
 /* Responsive adjustments for smaller devices */
 @media (max-width: 768px) {
     .path-text {
-        font-size: 3vw; /* Larger font size for better readability on small screens */
+        font-size: 8vw; /* Larger font size for better readability on small screens */
     }
 }
 
-
-#curvePath2 {
+#curvePath{
     fill: none; /* Ensures path has no fill */
     stroke: none; /* Removes the stroke to make the path invisible */
     stroke-width: 0; /* Sets the stroke width to 0 for good measure */
