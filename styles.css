@@ -181,35 +181,49 @@ spline-viewer {
     overflow: hidden;
 }
 
-.scrolling-text {
-    top: 80%;
-    position: absolute;
-    display: inline-block;
-    transition: transform 0.5s cubic-bezier(0.23, 0.36, 0.28, 0.83);
-    will-change: transform;
-    backface-visibility: hidden;
+/* Ensures the entire page is covered */
+.full-page {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
 }
 
-.scrolling-text span {
-    display: inline-block;
-    background: linear-gradient(45deg, #6DAEC4, #f7d794, #755E44, #30160D);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-size: 200% 200%;
-    transition: background-position 0.1s;
+/* Fixed positioning for scrolling text container */
+.scrolling-container {
+    position: fixed; /* Use fixed to keep it in view */
+    top: 50%; /* Align vertically in the middle of the screen */
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%); /* Center it vertically */
+    overflow: hidden; /* No overflow to be visible */
+    z-index: 10; /* Ensure it's above other content */
 }
 
-.scrolling-text .scrolling-text-content {
-    color: #f7d794;
-    font-size: 4vw;
-    white-space: nowrap;
-    transition: transform 0.5s cubic-bezier(0.23, 0.36, 0.28, 0.83);
-    line-height: 1em;
-    margin: 50px 0;
+/* Responsive font size and path adjustment */
+.path-text {
+    fill: #fff;
+    font-size: 1.5vw; /* Adjust font size based on viewport width */
+    font-weight: bold;
+    white-space: nowrap; /* Ensures text stays in one line */
 }
 
+/* Ensure SVG scales correctly */
+svg {
+    width: 100%;
+    height: auto; /* Maintains aspect ratio */
+    overflow: visible; /* Allows path to extend outside the SVG if needed */
+}
+
+/* Responsive adjustments for smaller devices */
 @media (max-width: 768px) {
-    .scrolling-text .scrolling-text-content {
-        font-size: 8vw;
+    .path-text {
+        font-size: 3vw; /* Larger font size for better readability on small screens */
     }
+}
+
+
+#curvePath2 {
+    fill: none; /* Ensures path has no fill */
+    stroke: none; /* Removes the stroke to make the path invisible */
+    stroke-width: 0; /* Sets the stroke width to 0 for good measure */
 }

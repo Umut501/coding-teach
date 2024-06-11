@@ -23,36 +23,35 @@
     <spline-viewer url="https://prod.spline.design/vaO1W0JBrI3fuHAn/scene.splinecode"></spline-viewer>
   </div>
 
-  <div class="navDiv">
-    <!-- Hamburger icon -->
-    <div class="hamburger"></div>
-    <div class="hamburger"></div>
-    <div class="hamburger"></div>
-    <!-- Navigation items -->
-    <div class="navItem">Home</div>
-    <div class="navItem">About</div>
-    <div class="navItem">Projects</div>
-    <div class="navItem">Blog</div>
-    <div class="navItem">Contact</div>
+  <div class="scrolling-container">
+    <!-- Second SVG Path -->
+    <svg viewBox="0 0 1200 300">
+      <path id="curvePath2" fill="none" stroke="black" stroke-width="2" d="
+          M 0,150 
+          L 300,150
+          C 450,150 450,250 600,250 
+          C 750,250 750,150 900,150
+          C 1050,150 1050,50 1200,50
+          L 1200,150" />
+      <text class="path-text">
+          <textPath id="textPath2" href="#curvePath2" startOffset="0%">
+              Hello, I'm Umut Welcome to my portfolio website! Hello, I'm Umut Welcome to my portfolio website! 
+          </textPath>
+      </text>
+  </svg>
+  
+</div>
+<!-- about page -->
+<div class="about-container">
+  <div class="about-content">
+    <h1>About Me</h1>
+    <p>
+      I am a web developer who is passionate about creating web applications that are both functional and visually appealing. I have experience with HTML, CSS, JavaScript, and various web development frameworks. I am always looking to learn new technologies and improve my skills.
+    </p>
   </div>
+</div>
 
-    
-    
-    <div class="container" speed="70">
-      <div class='scrolling-text'>
-        <h2 class="scrolling-text-content"><span>HEY THERE, I AM UMUT! a software developer who loves crafting sleek & functional websites.</span></h2>
-      </div>
-    </div>
-
-
-
-  <div class="full-page" id="projects">
-    <h1 class="centered-text">Projects</h1>
-  </div>
-  <div class="full-page" id="contact">
-    <h1 class="centered-text">Contact</h1>
-  </div>
-
+<!-- contact page -->
 </body>
 
 </html>
